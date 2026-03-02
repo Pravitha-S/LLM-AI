@@ -64,7 +64,6 @@ User → HTML Frontend → FastAPI Backend
 ![Appointments Table](Screenshots/Appointments_table.png)
 ![User Queries](Screenshots/UserQueries_table.png)
 ![Chat History](Screenshots/ChatHistory_table.png)
-![Book Appointment](Screenshots/Book_Appointment.png)
 
 ---
 
