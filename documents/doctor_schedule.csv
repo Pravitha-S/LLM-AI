@@ -1,0 +1,11 @@
+Doctor Name,Department,Qualification,OPD Days,OPD Timing,Available Today,Phone,Room Number
+Dr. Arun Kumar Nair,General Medicine,MBBS MD,Mon Wed Fri,9:00 AM - 1:00 PM,Yes,0471-2345678,101
+Dr. Lakshmi Menon,Pediatrics,MBBS DCH MD,Mon - Fri,9:00 AM - 12:00 PM,Yes,0471-2345679,102
+Dr. Rajesh Pillai,Orthopedics,MBBS MS Ortho,Tue Thu Sat,10:00 AM - 2:00 PM,No,0471-2345680,103
+Dr. Priya Krishnan,Gynecology,MBBS DGO MS,Mon Wed Fri,9:30 AM - 1:30 PM,Yes,0471-2345681,201
+Dr. Suresh Babu,Cardiology,MBBS MD DM,Mon - Sat,8:00 AM - 12:00 PM,Yes,0471-2345682,202
+Dr. Meera Nambiar,Dermatology,MBBS MD Derma,Tue Thu,10:00 AM - 1:00 PM,Yes,0471-2345683,105
+Dr. Vinod Varma,ENT,MBBS MS ENT,Mon Wed Fri,9:00 AM - 12:00 PM,No,0471-2345684,106
+Dr. Anjali Thomas,Ophthalmology,MBBS MS Ophthal,Mon - Fri,9:00 AM - 1:00 PM,Yes,0471-2345685,203
+Dr. Manoj Chandran,Surgery,MBBS MS Surgery,Tue Thu Sat,8:30 AM - 12:30 PM,Yes,0471-2345686,301
+Dr. Deepa Rajan,Psychiatry,MBBS MD Psychiatry,Mon Wed,10:00 AM - 1:00 PM,Yes,0471-2345687,107

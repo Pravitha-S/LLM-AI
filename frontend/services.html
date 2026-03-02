@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services | DGH Kasaragod</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--green-dark:#1a4731;--green-mid:#2d6a4f;--gold:#c9a84c;--cream:#fdf8f0;}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);}
+    .nav-link{position:relative;}.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--gold);transition:width 0.3s;}.nav-link:hover::after{width:100%;}
+    .card-hover{transition:transform 0.3s,box-shadow 0.3s;}.card-hover:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.1);}
+    #chat-bubble{position:fixed;bottom:24px;right:24px;z-index:1000;}
+    #chat-window{position:fixed;bottom:90px;right:24px;width:360px;height:520px;background:white;border-radius:16px;z-index:999;box-shadow:0 25px 60px rgba(0,0,0,0.2);display:none;flex-direction:column;overflow:hidden;}
+    #chat-window.open{display:flex;animation:slideUp 0.3s ease;}
+    @keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    #chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;}
+    .msg-bot{background:#f0faf4;border-radius:0 12px 12px 12px;padding:10px 14px;max-width:85%;font-size:14px;border:1px solid #d1fae5;}
+    .msg-user{background:var(--green-dark);color:white;border-radius:12px 0 12px 12px;padding:10px 14px;max-width:85%;font-size:14px;align-self:flex-end;}
+    .typing-dot{width:8px;height:8px;border-radius:50%;background:#2d6a4f;animation:bounce 1.2s infinite;}
+    .typing-dot:nth-child(2){animation-delay:0.2s}.typing-dot:nth-child(3){animation-delay:0.4s}
+    @keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-8px)}}
+    .quick-btn{background:#f0faf4;border:1px solid #86efac;color:var(--green-dark);border-radius:20px;padding:4px 12px;font-size:12px;cursor:pointer;transition:all 0.2s;}.quick-btn:hover{background:var(--green-dark);color:white;}
+  </style>
+</head>
+<body>
+<div class="bg-green-900 text-green-100 text-xs py-1 px-4 flex justify-between"><span>🏥 Government of Kerala | Health & Family Welfare Department</span><span>Emergency: <strong class="text-yellow-300">108</strong></span></div>
+<nav class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="w-12 h-12 rounded-full flex items-center justify-center text-white text-xl" style="background:var(--green-dark)">🏥</div>
+      <div><div class="font-bold text-sm" style="color:var(--green-dark)">District General Hospital</div><div class="text-xs text-gray-500">Kasaragod, Kerala Government</div></div>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium" style="color:var(--green-dark)">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="services.html" class="nav-link" style="color:var(--gold)">Services</a>
+      <a href="doctors.html" class="nav-link">Doctors</a>
+      <a href="faq.html" class="nav-link">FAQ</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section class="py-10 px-4 text-white" style="background:var(--green-dark)">
+  <div class="max-w-6xl mx-auto">
+    <h1 class="text-3xl font-bold mb-2" style="font-family:'Playfair Display',serif">Hospital Services</h1>
+    <p class="text-green-200">Comprehensive medical care for every need</p>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-4 py-12">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="bg-white rounded-2xl p-6 card-hover shadow-sm border border-gray-100">
+      <div class="text-4xl mb-4">🩺</div>
+      <h3 class="text-xl font-bold mb-2" style="color:var(--green-dark)">OPD Services</h3>
+      <p class="text-gray-500 text-sm mb-3">General and specialist outpatient consultations across all departments.</p>
+      <ul class="text-sm text-gray-600 space-y-1">
+        <li>✅ Monday to Saturday: 8:00 AM – 1:00 PM</li>
+        <li>✅ Token system via counter or online</li>
+        <li>✅ Free consultation under government scheme</li>
+        <li>✅ 20+ specialty departments</li>
+      </ul>
+    </div>
+    <div class="bg-white rounded-2xl p-6 card-hover shadow-sm border border-gray-100">
+      <div class="text-4xl mb-4">🚑</div>
+      <h3 class="text-xl font-bold mb-2" style="color:var(--green-dark)">Emergency & Trauma</h3>
+      <p class="text-gray-500 text-sm mb-3">Round-the-clock emergency services with dedicated trauma care.</p>
+      <ul class="text-sm text-gray-600 space-y-1">
+        <li>✅ 24/7 Emergency Department</li>
+        <li>✅ Trauma resuscitation unit</li>
+        <li>✅ ICU with 30 beds</li>
+        <li>✅ Ambulance: 108 / 102</li>
+      </ul>
+    </div>
+    <div class="bg-white rounded-2xl p-6 card-hover shadow-sm border border-gray-100">
+      <div class="text-4xl mb-4">🔬</div>
+      <h3 class="text-xl font-bold mb-2" style="color:var(--green-dark)">Diagnostics & Lab</h3>
+      <p class="text-gray-500 text-sm mb-3">State-of-the-art diagnostic facilities at subsidised government rates.</p>
+      <ul class="text-sm text-gray-600 space-y-1">
+        <li>✅ Blood tests, urine, stool analysis</li>
+        <li>✅ Digital X-Ray & Ultrasound</li>
+        <li>✅ CT Scan & MRI available</li>
+        <li>✅ ECG & Echocardiogram</li>
+      </ul>
+    </div>
+    <div class="bg-white rounded-2xl p-6 card-hover shadow-sm border border-gray-100">
+      <div class="text-4xl mb-4">💊</div>
+      <h3 class="text-xl font-bold mb-2" style="color:var(--green-dark)">Free Pharmacy</h3>
+      <p class="text-gray-500 text-sm mb-3">Medicines provided free under Kerala government schemes.</p>
+      <ul class="text-sm text-gray-600 space-y-1">
+        <li>✅ Free under Karuna Health Scheme</li>
+        <li>✅ Arogyakeralam beneficiaries</li>
+        <li>✅ Timings: 8AM–8PM daily</li>
+        <li>✅ Emergency pharmacy 24/7</li>
+      </ul>
+    </div>
+    <div class="bg-white rounded-2xl p-6 card-hover shadow-sm border border-gray-100">
+      <div class="text-4xl mb-4">🤱</div>
+      <h3 class="text-xl font-bold mb-2" style="color:var(--green-dark)">Mother & Child Health</h3>
+      <p class="text-gray-500 text-sm mb-3">Dedicated maternity and paediatric care services.</p>
+      <ul class="text-sm text-gray-600 space-y-1">
+        <li>✅ Antenatal & postnatal care</li>
+        <li>✅ NICU with 15 beds</li>
+        <li>✅ Free delivery under JSSK</li>
+        <li>✅ Immunisation every Tuesday</li>
+      </ul>
+    </div>
+    <div class="bg-white rounded-2xl p-6 card-hover shadow-sm border border-gray-100">
+      <div class="text-4xl mb-4">🩸</div>
+      <h3 class="text-xl font-bold mb-2" style="color:var(--green-dark)">Blood Bank</h3>
+      <p class="text-gray-500 text-sm mb-3">24/7 blood bank with component separation facility.</p>
+      <ul class="text-sm text-gray-600 space-y-1">
+        <li>✅ All blood groups available</li>
+        <li>✅ Voluntary donation accepted</li>
+        <li>✅ Contact: 04994-220331</li>
+        <li>✅ Free for BPL patients</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-gray-900 text-gray-300 py-8 px-4 text-center text-sm">© 2024 District General Hospital Kasaragod | Government of Kerala</footer>
+
+<!-- CHATBOT -->
+<div id="chat-bubble">
+  <button onclick="toggleChat()" class="w-14 h-14 rounded-full text-white text-2xl shadow-xl flex items-center justify-center hover:scale-110 transition-all" style="background:var(--green-dark)">💬</button>
+  <div class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full animate-pulse"></div>
+</div>
+<div id="chat-window">
+  <div class="p-4 text-white flex items-center justify-between" style="background:var(--green-dark)">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 bg-white bg-opacity-20 rounded-full flex items-center justify-center">🏥</div>
+      <div><div class="font-semibold text-sm">DGH Assistant</div><div class="text-xs text-green-200">● Online</div></div>
+    </div>
+    <button onclick="toggleChat()" class="opacity-70 hover:opacity-100 text-xl">✕</button>
+  </div>
+  <div id="chat-messages">
+    <div class="msg-bot">🙏 <strong>Namaskaram!</strong> Ask me about our services, timings, or any query!</div>
+    <div class="flex flex-wrap gap-2">
+      <button class="quick-btn" onclick="sendQuick('What are OPD timings?')">🕐 OPD Hours</button>
+      <button class="quick-btn" onclick="sendQuick('Is MRI available?')">🔬 Diagnostics</button>
+    </div>
+  </div>
+  <div class="p-3 border-t flex gap-2">
+    <input id="chatInput" type="text" placeholder="Type your message..." class="flex-1 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-400" onkeydown="if(event.key==='Enter')sendMessage()"/>
+    <button onclick="sendMessage()" class="w-9 h-9 rounded-lg text-white flex items-center justify-center" style="background:var(--green-dark)">➤</button>
+  </div>
+</div>
+<script>
+function toggleChat(){document.getElementById('chat-window').classList.toggle('open');}
+async function sendMessage(){const input=document.getElementById('chatInput');const msg=input.value.trim();if(!msg)return;input.value='';appendMessage(msg,'user');showTyping();try{const res=await fetch('http://localhost:8000/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:msg})});const data=await res.json();removeTyping();appendMessage(data.response,'bot');}catch(e){removeTyping();appendMessage("Sorry, can't connect. Call 04994-220330.",'bot');}}
+function sendQuick(msg){document.getElementById('chatInput').value=msg;sendMessage();}
+function appendMessage(text,type){const msgs=document.getElementById('chat-messages');const div=document.createElement('div');div.className=type==='user'?'msg-user':'msg-bot';div.innerHTML=text;msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;}
+function showTyping(){const msgs=document.getElementById('chat-messages');const div=document.createElement('div');div.id='typing-indicator';div.className='msg-bot flex gap-1 items-center';div.innerHTML='<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;}
+function removeTyping(){const t=document.getElementById('typing-indicator');if(t)t.remove();}
+</script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ | DGH Kasaragod</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--green-dark:#1a4731;--green-mid:#2d6a4f;--gold:#c9a84c;--cream:#fdf8f0;}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);}
+    .nav-link{position:relative;}.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--gold);transition:width 0.3s;}.nav-link:hover::after{width:100%;}
+    .faq-item{border-bottom:1px solid #e5e7eb;}
+    .faq-answer{display:none;padding:0 0 16px 0;}
+    .faq-answer.open{display:block;}
+    .faq-icon{transition:transform 0.3s;}
+    .faq-icon.open{transform:rotate(45deg);}
+    #chat-bubble{position:fixed;bottom:24px;right:24px;z-index:1000;}
+    #chat-window{position:fixed;bottom:90px;right:24px;width:360px;height:520px;background:white;border-radius:16px;z-index:999;box-shadow:0 25px 60px rgba(0,0,0,0.2);display:none;flex-direction:column;overflow:hidden;}
+    #chat-window.open{display:flex;animation:slideUp 0.3s ease;}
+    @keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    #chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;}
+    .msg-bot{background:#f0faf4;border-radius:0 12px 12px 12px;padding:10px 14px;max-width:85%;font-size:14px;border:1px solid #d1fae5;}
+    .msg-user{background:var(--green-dark);color:white;border-radius:12px 0 12px 12px;padding:10px 14px;max-width:85%;font-size:14px;align-self:flex-end;}
+    .typing-dot{width:8px;height:8px;border-radius:50%;background:#2d6a4f;animation:bounce 1.2s infinite;}
+    .typing-dot:nth-child(2){animation-delay:0.2s}.typing-dot:nth-child(3){animation-delay:0.4s}
+    @keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-8px)}}
+    .quick-btn{background:#f0faf4;border:1px solid #86efac;color:var(--green-dark);border-radius:20px;padding:4px 12px;font-size:12px;cursor:pointer;transition:all 0.2s;}.quick-btn:hover{background:var(--green-dark);color:white;}
+  </style>
+</head>
+<body>
+<div class="bg-green-900 text-green-100 text-xs py-1 px-4 flex justify-between"><span>🏥 Government of Kerala | Health & Family Welfare Department</span><span>Emergency: <strong class="text-yellow-300">108</strong></span></div>
+<nav class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="w-12 h-12 rounded-full flex items-center justify-center text-white text-xl" style="background:var(--green-dark)">🏥</div>
+      <div><div class="font-bold text-sm" style="color:var(--green-dark)">District General Hospital</div><div class="text-xs text-gray-500">Kasaragod, Kerala Government</div></div>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium" style="color:var(--green-dark)">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="doctors.html" class="nav-link">Doctors</a>
+      <a href="faq.html" class="nav-link" style="color:var(--gold)">FAQ</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section class="py-10 px-4 text-white" style="background:var(--green-dark)">
+  <div class="max-w-6xl mx-auto">
+    <h1 class="text-3xl font-bold mb-2" style="font-family:'Playfair Display',serif">Frequently Asked Questions</h1>
+    <p class="text-green-200">Find answers to common questions about our hospital services</p>
+  </div>
+</section>
+
+<section class="max-w-3xl mx-auto px-4 py-12">
+
+  <!-- General -->
+  <h2 class="text-xl font-bold mb-4" style="color:var(--green-dark)">🏥 General</h2>
+  <div class="bg-white rounded-2xl shadow-sm border border-gray-100 mb-6 overflow-hidden">
+    <div class="faq-item p-5 cursor-pointer" onclick="toggle(this)">
+      <div class="flex justify-between items-center">
+        <span class="font-medium text-sm" style="color:var(--green-dark)">Is treatment free at District General Hospital?</span>
+        <span class="faq-icon text-xl font-light" style="color:var(--gold)">+</span>
+      </div>
+      <div class="faq-answer text-sm text-gray-600 mt-3">Yes! Consultation is free for all patients. Medicines, diagnostics and surgery are free for beneficiaries of Karuna Health Scheme, Arogyakeralam, Ayushman Bharat PMJAY, JSSK and BPL card holders.</div>
+    </div>
+    <div class="faq-item p-5 cursor-pointer" onclick="toggle(this)">
+      <div class="flex justify-between items-center">
+        <span class="font-medium text-sm" style="color:var(--green-dark)">What are the hospital working hours?</span>
+        <span class="faq-icon text-xl font-light" style="color:var(--gold)">+</span>
+      </div>
+      <div class="faq-answer text-sm text-gray-600 mt-3">OPD is open Monday to Saturday, 8:00 AM to 1:00 PM. Emergency services are available 24 hours, 7 days a week including Sundays and holidays.</div>
+    </div>
+    <div class="faq-item p-5 cursor-pointer" onclick="toggle(this)">
+      <div class="flex justify-between items-center">
+        <span class="font-medium text-sm" style="color:var(--green-dark)">Is the hospital open on Sundays?</span>
+        <span class="faq-icon text-xl font-light" style="color:var(--gold)">+</span>
+      </div>
+      <div class="faq-answer text-sm text-gray-600 mt-3">OPD is closed on Sundays. However, Emergency Department, ICU, Blood Bank and pharmacy are available round the clock including Sundays.</div>
+    </div>
+  </div>
+
+  <!-- Appointments -->
+  <h2 class="text-xl font-bold mb-4" style="color:var(--green-dark)">🎫 Appointments & Tokens</h2>
+  <div class="bg-white rounded-2xl shadow-sm border border-gray-100 mb-6 overflow-hidden">
+    <div class="faq-item p-5 cursor-pointer" onclick="toggle(this)">
+      <div class="flex justify-between items-center">
+        <span class="font-medium text-sm" style="color:var(--green-dark)">How do I get an OPD token?</span>
+        <span class="faq-icon text-xl font-light" style="color:var(--gold)">+</span>
+      </div>
+      <div class="faq-answer text-sm text-gray-600 mt-3">Visit the OPD counter between 8:00 AM and 11:00 AM to collect a token. You can also book online through our website. Token collection is completely free.</div>
+    </div>
+    <div class="faq-item p-5 cursor-pointer" onclick="toggle(this)">
+      <div class="flex justify-between items-center">
+        <span class="font-medium text-sm" style="color:var(--green-dark)">How do I check my token status?</span>
+        <span class="faq-icon text-xl font-light" style="color:var(--gold)">+</span>
+      </div>
+      <div class="faq-answer text-sm text-gray-600 mt-3">Enter your token number (format: KSD followed by 4 digits, e.g. KSD2045) in the Token Status checker on our homepage, or ask our AI chatbot. You can also check at the OPD reception display board.</div>
+    </div>
+    <div class="faq-item p-5 cursor-pointer" onclick="toggle(this)">
+      <div class="flex justify-between items-center">
+        <span class="font-medium text-sm" style="color:var(--green-dark)">Can I book an appointment in advance?</span>
+        <span class="faq-icon text-xl font-light" style="color:var(--gold)">+</span>
+      </div>
+      <div class="faq-answer text-sm text-gray-600 mt-3">Yes, advance appointment booking is available online for specialist consultations. Walk-in tokens are also available daily at the OPD counter from 8AM.</div>
+    </div>
+  </div>
+
+  <!-- Documents -->
+  <h2 class="text-xl font-bold mb-4" style="color:var(--green-dark)">📋 Documents & Schemes</h2>
+  <div class="bg-white rounded-2xl shadow-sm border border-gray-100 mb-6 overflow-hidden">
+    <div class="faq-item p-5 cursor-pointer" onclick="toggle(this)">
+      <div class="flex justify-between items-center">
+        <span class="font-medium text-sm" style="color:var(--green-dark)">What documents do I need to bring?</span>
+        <span class="faq-icon text-xl font-light" style="color:var(--gold)">+</span>
+      </div>
+      <div class="faq-answer text-sm text-gray-600 mt-3">For general consultation: Any valid ID (Aadhaar, voter ID). For government scheme benefits: Aadhaar card + ration card. For Ayushman Bharat: PMJAY card or Aadhaar linked to scheme.</div>
+    </div>
+    <div class="faq-item p-5 cursor-pointer" onclick="toggle(this)">
+      <div class="flex justify-between items-center">
+        <span class="font-medium text-sm" style="color:var(--green-dark)">How do I know if I'm eligible for free treatment?</span>
+        <span class="faq-icon text-xl font-light" style="color:var(--gold)">+</span>
+      </div>
+      <div class="faq-answer text-sm text-gray-600 mt-3">BPL card holders, Karuna scheme beneficiaries, Arogyakeralam members, PMJAY card holders and JSSK beneficiaries (pregnant women and newborns) are eligible. Visit the scheme desk at the entrance for verification.</div>
+    </div>
+  </div>
+
+  <!-- Emergency -->
+  <h2 class="text-xl font-bold mb-4" style="color:var(--green-dark)">🚑 Emergency</h2>
+  <div class="bg-white rounded-2xl shadow-sm border border-gray-100 mb-6 overflow-hidden">
+    <div class="faq-item p-5 cursor-pointer" onclick="toggle(this)">
+      <div class="flex justify-between items-center">
+        <span class="font-medium text-sm" style="color:var(--green-dark)">How do I call an ambulance?</span>
+        <span class="faq-icon text-xl font-light" style="color:var(--gold)">+</span>
+      </div>
+      <div class="faq-answer text-sm text-gray-600 mt-3">Call 108 for free ambulance service (24/7) or 102 for maternal ambulance service. You can also reach our emergency directly at 04994-220332.</div>
+    </div>
+    <div class="faq-item p-5 cursor-pointer" onclick="toggle(this)">
+      <div class="flex justify-between items-center">
+        <span class="font-medium text-sm" style="color:var(--green-dark)">Is blood available at all times?</span>
+        <span class="faq-icon text-xl font-light" style="color:var(--gold)">+</span>
+      </div>
+      <div class="faq-answer text-sm text-gray-600 mt-3">Yes, our blood bank operates 24/7 with all blood groups available. Contact blood bank at 04994-220331. Voluntary donation is always welcome.</div>
+    </div>
+  </div>
+
+  <!-- Chatbot CTA -->
+  <div class="bg-white rounded-2xl p-6 text-center border border-gray-100 shadow-sm">
+    <div class="text-3xl mb-3">🤖</div>
+    <h3 class="font-bold mb-2" style="color:var(--green-dark)">Still have questions?</h3>
+    <p class="text-gray-500 text-sm mb-4">Ask our AI assistant — available 24/7</p>
+    <button onclick="toggleChat()" class="px-6 py-2 rounded-lg text-white text-sm font-medium" style="background:var(--green-dark)">Chat with AI Assistant</button>
+  </div>
+</section>
+
+<footer class="bg-gray-900 text-gray-300 py-8 px-4 text-center text-sm">© 2024 District General Hospital Kasaragod | Government of Kerala</footer>
+
+<!-- CHATBOT -->
+<div id="chat-bubble">
+  <button onclick="toggleChat()" class="w-14 h-14 rounded-full text-white text-2xl shadow-xl flex items-center justify-center hover:scale-110 transition-all" style="background:var(--green-dark)">💬</button>
+  <div class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full animate-pulse"></div>
+</div>
+<div id="chat-window">
+  <div class="p-4 text-white flex items-center justify-between" style="background:var(--green-dark)">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 bg-white bg-opacity-20 rounded-full flex items-center justify-center">🏥</div>
+      <div><div class="font-semibold text-sm">DGH Assistant</div><div class="text-xs text-green-200">● Online</div></div>
+    </div>
+    <button onclick="toggleChat()" class="opacity-70 hover:opacity-100 text-xl">✕</button>
+  </div>
+  <div id="chat-messages">
+    <div class="msg-bot">🙏 <strong>Namaskaram!</strong> Ask me any question about our hospital!</div>
+    <div class="flex flex-wrap gap-2">
+      <button class="quick-btn" onclick="sendQuick('What are OPD timings?')">🕐 OPD Hours</button>
+      <button class="quick-btn" onclick="sendQuick('How to get a token?')">🎫 Token</button>
+      <button class="quick-btn" onclick="sendQuick('What schemes are available?')">💚 Schemes</button>
+    </div>
+  </div>
+  <div class="p-3 border-t flex gap-2">
+    <input id="chatInput" type="text" placeholder="Type your message..." class="flex-1 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-400" onkeydown="if(event.key==='Enter')sendMessage()"/>
+    <button onclick="sendMessage()" class="w-9 h-9 rounded-lg text-white flex items-center justify-center" style="background:var(--green-dark)">➤</button>
+  </div>
+</div>
+
+<script>
+function toggle(item) {
+  const answer = item.querySelector('.faq-answer');
+  const icon = item.querySelector('.faq-icon');
+  answer.classList.toggle('open');
+  icon.classList.toggle('open');
+  icon.textContent = icon.classList.contains('open') ? '×' : '+';
+}
+function toggleChat(){document.getElementById('chat-window').classList.toggle('open');}
+async function sendMessage(){
+  const input=document.getElementById('chatInput');const msg=input.value.trim();if(!msg)return;
+  input.value='';appendMessage(msg,'user');showTyping();
+  try{const res=await fetch('http://localhost:8000/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:msg})});
+  const data=await res.json();removeTyping();appendMessage(data.response,'bot');}
+  catch(e){removeTyping();appendMessage("Sorry, can't connect. Call 04994-220330.",'bot');}
+}
+function sendQuick(msg){document.getElementById('chatInput').value=msg;sendMessage();}
+function appendMessage(text,type){const msgs=document.getElementById('chat-messages');const div=document.createElement('div');div.className=type==='user'?'msg-user':'msg-bot';div.innerHTML=text;msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;}
+function showTyping(){const msgs=document.getElementById('chat-messages');const div=document.createElement('div');div.id='typing-indicator';div.className='msg-bot flex gap-1 items-center';div.innerHTML='<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;}
+function removeTyping(){const t=document.getElementById('typing-indicator');if(t)t.remove();}
+</script>
+</body>
+</html>

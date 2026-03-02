@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+python-dotenv
+google-generativeai
+sentence-transformers
+PyPDF2
+python-multipart
+numpy
+requests
+mysql-connector-python
