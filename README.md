@@ -4,6 +4,9 @@ An AI-powered chatbot for District General Hospital Kasaragod,
 Kerala Government. Built with FastAPI, RAG pipeline, 
 Gemini LLM with local Ollama fallback, and MySQL database.
 
+## 🎥 Demo
+> ⏳ GIF starts after 30 seconds — please wait for the chatbot interaction!
+
 ![Demo](Screenshots/demo.gif)
 
 ---
